@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1150,1194" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1153.3333333333333,2190" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -87,34 +87,21 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Internet Research_AutomatedReportMatching_E2E" sap:VirtualizedContainerService.HintSize="450,1129.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Internet Research_AutomatedReportMatching_E2E" sap:VirtualizedContainerService.HintSize="548.6666666666666,2125.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ProcessNamePDF" />
       <Variable x:TypeArguments="x:String" Name="ProcessNameExcel" />
-      <Variable x:TypeArguments="x:String" Name="PAHPFolder">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\RollLe01\OneDrive - Reed Elsevier Group ICO Reed Elsevier Inc\PA HP\OLD PA HP MASTERFILES MARCH - JULY\07092024</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[&quot;C:\Users\RollLe01\OneDrive - Reed Elsevier Group ICO Reed Elsevier Inc\PA HP\&quot; &amp; Date.Now.ToString(&quot;MMddyyyy&quot;)]" Name="PAHPFolder" />
       <Variable x:TypeArguments="x:String" Name="YesterdayDate" />
       <Variable x:TypeArguments="x:Boolean" Name="PAHPFolderExists" />
-      <Variable x:TypeArguments="x:String" Name="PAHPSubFolder">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="PAHPFolder &amp; &quot;\RAW PA HP FILES&quot;" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="DoneFolder">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(PAHPFolder, &quot;DONE&quot;)" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Masterfile">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\RollLe01\OneDrive - Reed Elsevier Group ICO Reed Elsevier Inc\PA HP\OLD PA HP MASTERFILES MARCH - JULY\07092024\07092024.xlsx</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[PAHPFolder &amp; &quot;\RAW PA HP FILES&quot;]" Name="PAHPSubFolder" />
+      <Variable x:TypeArguments="x:String" Default="[Path.Combine(PAHPFolder, &quot;DONE&quot;)]" Name="DoneFolder" />
+      <Variable x:TypeArguments="x:String" Default="[&quot;C:\Users\RollLe01\OneDrive - Reed Elsevier Group ICO Reed Elsevier Inc\PA HP\&quot; &amp; Date.Now.ToString(&quot;MMddyyyy&quot;) &amp; &quot;\&quot; &amp; Date.Now.ToString(&quot;MMddyyyy&quot;) &amp; &quot;.xlsx&quot;]" Name="Masterfile" />
       <Variable x:TypeArguments="x:Boolean" Name="MasterfileExists" />
       <Variable x:TypeArguments="sd:DataTable" Name="FileDT" />
       <Variable x:TypeArguments="x:String" Name="DateProcessed" />
@@ -125,53 +112,67 @@
       <Variable x:TypeArguments="x:String" Name="StatusVal" />
       <Variable x:TypeArguments="x:String" Name="AutoStatus" />
       <Variable x:TypeArguments="s:String[]" Name="RemovePDF" />
+      <Variable x:TypeArguments="x:String" Name="InboundedCol" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
+      <Variable x:TypeArguments="x:String" Name="ProcessNameEdge" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_3">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send email once automation has started - Invoke Workflow File (Send email once automation has started.xaml)" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Send email once automation has started.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-        </Sequence>
-      </ui:CommentOut.Body>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="InitAllSettings.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">IRConfigFile.xlsx</InArgument>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Close_all_active_Acrobat_and_Excel_applications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Close_all_active_Acrobat_and_Excel_applications.xaml">
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send email once automation has started - Invoke Workflow File (Send email once automation has started.xaml)" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Send email once automation has started.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="In_RecipientCC">[Config("RecipientCC").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_RecipientTo">[Config("RecipientTo").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_SMTPServer">[Config("SMTPServer").ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Close_all_active_Acrobat_and_Excel_applications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Close_all_active_Acrobat_and_Excel_applications.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="In_ProcessNamePDF">[ProcessNamePDF]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="In_ProcessNameExcel">[ProcessNameExcel]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_ProcessNameEdge">[ProcessNameEdge]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Move_files_to_DONE_folder_before_renaming.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Move_files_to_DONE_folder_before_renaming.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Download Files from SharePoint.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Download Files from SharePoint.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="In_BaseURL">[Config("BaseURL").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_SuffixToday">[Config("SuffixToday").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_SuffixDone">[Config("SuffixDone").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_TempFiles">[Config("TempFiles").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_MasterFolder">[Config("MasterFolder").ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Extract files from the zipped folder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Extract files from the zipped folder.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="In_MasterFolder">[Config("MasterFolder").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_ZippedDirectory">[Config("ZippedDirectory").ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Move_files_to_DONE_folder_before_renaming.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Move_files_to_DONE_folder_before_renaming.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="In_PAHPFolder">[PAHPFolder]</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="In_PAHPFolderExists">[PAHPFolderExists]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="In_PAHPSubFolder">[PAHPSubFolder]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="In_DoneFolder">[DoneFolder]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="In_YesterdayDate">[YesterdayDate]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_MasterFolder">[Config("MasterFolder").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="File Renaming Workflow - Invoke Workflow File (File Renaming Workflow.xaml)" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="File Renaming Workflow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="File Renaming Workflow - Invoke Workflow File (File Renaming Workflow.xaml)" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="File Renaming Workflow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="In_Masterfile">[Masterfile]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="In_YesterdayDate">[YesterdayDate]</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="In_MasterfileExists">[MasterfileExists]</InArgument>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="In_FileDT">[FileDT]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="In_DateProcessed">[DateProcessed]</InArgument>
@@ -183,52 +184,46 @@
         <InArgument x:TypeArguments="x:String" x:Key="In_AutoStatus">[AutoStatus]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="In_PAHPFolder">[PAHPFolder]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="In_DoneFolder">[DoneFolder]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_InboundedCol">[InboundedCol]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_MasterFolder">[Config("MasterFolder").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Status for Denied and Pending Transactions - Invoke Workflow File (Update Status for Denied and Pending Transactions.xaml)" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Update Status for Denied and Pending Transactions.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Unrenamed files deletion worfklow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Unrenamed files deletion worfklow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="In_YesterdayDate">[YesterdayDate]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="In_Masterfile">[Masterfile]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="In_RemovePDF">[RemovePDF]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_DoneFolder">[DoneFolder]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_PAHPFolder">[PAHPFolder]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_MasterFolder">[Config("MasterFolder").ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Status for Denied and Pending Transactions - Invoke Workflow File (Update Status for Denied and Pending Transactions.xaml)" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Update Status for Denied and Pending Transactions.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="In_FileDT">[FileDT]</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="In_MasterfileExists">[MasterfileExists]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_MasterFolder">[Config("MasterFolder").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Unrenamed files deletion worfklow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Unrenamed files deletion worfklow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Upload files to the SharePoint site after automation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Upload files to the SharePoint site after automation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="s:String[]" x:Key="In_RemovePDF">
-          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="RemovePDF" />
+        <InArgument x:TypeArguments="x:String" x:Key="In_BaseURL">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;BaseURL&quot;).ToString" />
         </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="In_DoneFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="DoneFolder" />
+        <InArgument x:TypeArguments="x:String" x:Key="In_SuffixDone">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;SuffixDone&quot;).ToString" />
         </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="In_PAHPFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="PAHPFolder" />
+        <InArgument x:TypeArguments="x:String" x:Key="In_MasterFolder">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;MasterFolder&quot;).ToString" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send email once automation has been completed - Invoke Workflow File (Send email once automation has been completed.xaml)" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Send email once automation has been completed.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send email once automation has been completed - Invoke Workflow File (Send email once automation has been completed.xaml)" sap:VirtualizedContainerService.HintSize="486.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Send email once automation has been completed.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="In_RecipientTo">[Config("RecipientTo").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_RecipientCC">[Config("RecipientCC").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_SMTPServer">[Config("SMTPServer").ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,306" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -246,7 +241,7 @@
       </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
