@@ -118,7 +118,7 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_Files_from_SharePoint" sap:VirtualizedContainerService.HintSize="726,4787" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_Files_from_SharePoint" sap:VirtualizedContainerService.HintSize="1196,4313" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:FileInfo" Name="FileToday" />
       <Variable x:TypeArguments="x:String" Name="DateToday" />
@@ -129,8 +129,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Downloading files from the SharePoint site.&quot;]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="664,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Downloading files from the SharePoint site.&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="620,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -152,29 +152,29 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence sap:VirtualizedContainerService.HintSize="664,4012" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence sap:VirtualizedContainerService.HintSize="620,3667" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[In_DownloadsFolder]" File="[FileToday]" sap:VirtualizedContainerService.HintSize="602,3159" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="[In_TempFiles]">
+      <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[In_DownloadsFolder]" File="[FileToday]" sap:VirtualizedContainerService.HintSize="586,2874" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="[In_TempFiles]">
         <ui:GetLastDownloadedFile.Body>
           <ActivityAction>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568,2903" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,2586" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="506,2792" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="cf3ed675-4977-4149-920c-2227338435cf" Version="V2" WindowResize="Maximize">
+              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="518,2526" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="cf3ed675-4977-4149-920c-2227338435cf" Version="V2" WindowResize="Maximize">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,2575" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,2286" sap2010:WorkflowViewState.IdRef="Sequence_11">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Boolean" Name="ElementExists" />
                         <Variable x:TypeArguments="x:Boolean" Name="DateTodayFolder" />
@@ -184,7 +184,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_16">
                             <sap:WorkflowViewStateService.ViewState>
@@ -202,8 +202,8 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="410,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V3" />
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="450,211" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Shortcuts="[d(hk)][k(Esc)][u(hk)]" Version="V3" />
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_5">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_17">
                             <sap:WorkflowViewStateService.ViewState>
@@ -231,7 +231,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_6">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_18">
                             <sap:WorkflowViewStateService.ViewState>
@@ -256,7 +256,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="410,90" sap2010:WorkflowViewState.IdRef="Delay_1">
+                      <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="Delay_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -264,7 +264,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Delay>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="410,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Text="[DateToday]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,250" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Text="[DateToday]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://reedelsevier.sharepoint.com/sites/OG-ONECRUIR/Shared%20Documents/Forms/AllItems.aspx?newTargetListUrl=%2Fsites%2FOG%2DONECRUIR%2FShared%20Documents&amp;viewpath=%2Fsites%2FOG%2DONECRUIR%2FShared%20Documents%2FForms%2FAllItems%2Easpx&amp;id=%2Fsites%2FOG%2DONECRUIR%2FShared%20Documents%2FPA%20HP%2F" DesignTimeRectangle="712, 179, 473, 36" DesignTimeScaleFactor="1.125" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' class='VHvmmNt2vVrKJb47LhAFLw== WmiG6T+pssuBAHHa0raLDQ== o365sx-searchBoxInactive' aaname='' /&gt;" Guid="eb940fb7-49ac-4edf-aba3-22b814608741" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAd0AAAAoCAYAAAC7FSBwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPhSURBVHhe7dtNctowGIDh3CCBnpBjcIZ45eEOXYYrsCR3YONjZKPqB9mfPkvGcbASmnfxzBSD/9QZv5bdPv3Zbg0AAFjf03azMQAA4I4ywfXR/fj4MAAA4H4ul4tpmsYHmOgCAFDB6XRKwkt0AQBYkZvxEl0AACpwj5rjO16iCwDAyjYvL0QXAIAaiC4AAJUQXQAAKiG6AABUQnQBAKiE6AIAUAnRBQCgEqILAEAlDxTdzhz3O7N/6zLffdJ7a3a71pxz30X+N3tz7DLf3XA+7MzucE4/74+m85/veB4AgIcyEd2zaXc2FpIISX1EFwDw2PLR7Y5mbyPbvotlLsKPGN1cYOdE9wt0dFNEFwB+q2x0u7f9N89qc4guAOCxlaM7I0o+Lv3jZ/0oVj+eTrcXwxS3MUQoRGlYL864h1gl++0f246lx+dcjyFG9zqjj98nM3sdZvXbm/sV0U0/D+cRxjluc974pOuoePtjtH8P7/FYW/NXHUtA+AHgOxTe6cbwld9p6rCESA2/797aZF3/exGqGJPRI2wXC7VdGd10nfD7yXjkZrV+WXo8oxuNZL2wn2G/9lgOX4uuDmYYj2H/xfGRY6NfA8QbA3lDkDv/GOcF76sBAMtN/EMqOatSF2h/0VYX8luzJ3Xx91FRs0W/v+IM8horGR1reh2rGF0dHRVWud4nIzUruuo89P5z4zOmxlxHWPxGLvNjNto/AGBtk9GNYnz7i7sPko1ChozuEO1IRVdd+N2yYrQLUV8eXbVsKrqWP153DjNipc8t/Zw/D708Nz5BOE45rv22CjcHaWTHEQYA1DErup6MkPvz5CzsGgb5m1zEVFTcsp8a3SAcw634rhXdeBMzBFNtqzQjl08m3J9vzqABAGuYH115QS9d3KMZoStGpRiEnxDdGd9Zi6KrxnQ8Prn1ZkbXcttz5+bGa7RvAEAV2ejqfwTl+Aj0cQsXex278+EaotHFPz4SHUI1jor4nVxuAxdCuDC6uRB9Nrp2G63c7x2im5uxyvPIjY9eFme+c6Lrj/lwtPspfA8AWF0huuFinlABkPGIZBDTbdhAqVDlo+vEQIt1/fKF0bX8vuS2FkQ3+e9Co3VT+tzSz/E8zun4jW5g0m0E6djEbcyKbu6GBgBQ1fzHy3hw6qYCAFAd0f0tbjwSBwCsj+j+CvlH8wCAuojuf65/t867XAD4dkQXAIBKiC4AAJUQXQAAKiG6AABUcLlczGazIboAAKytaRqzJboAAKzrdDr1j5aJLgAAK3CPlJvXVx/cOMv10X15fjYAAOB+3DtcF1sZXB/duBAAANyPjG2wNf8Awy7vH4cs2T4AAAAASUVORK5CYII=" InformativeScreenshot="81dc90d28317fe8f71d491e75bd000dc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='{}' title='OG-ONECRUIR - PA HP - All Documents' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
@@ -275,8 +275,8 @@
                           </uix:TargetAnchorable>
                         </uix:NTypeInto.Target>
                       </uix:NTypeInto>
-                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="410,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V3" />
-                      <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[DateTodayFolder]" sap:VirtualizedContainerService.HintSize="410,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="450,211" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V3" />
+                      <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[DateTodayFolder]" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                         <ui:UiElementExists.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a6e8b40f-2ee6-452a-ab1d-e0000347b0f9" InformativeScreenshot="03d43ded45b41ec4b3eafe874a8448e7" Selector="[string.Format(&quot;&lt;html app='msedge.exe' htmlwindowname='{{}}' title='OG-ONECRUIR - PA HP - All Documents' /&gt;&lt;webctrl tag='SPAN' innertext='{0}' visibleinnertext='{0}' /&gt;&quot;, DateToday)]">
                             <ui:Target.TimeoutMS>
@@ -288,19 +288,19 @@
                           </ui:Target>
                         </ui:UiElementExists.Target>
                       </ui:UiElementExists>
-                      <If Condition="[DateTodayFolder]" sap:VirtualizedContainerService.HintSize="410,660" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If Condition="[DateTodayFolder]" sap:VirtualizedContainerService.HintSize="450,724" sap2010:WorkflowViewState.IdRef="If_1">
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,478" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,465" sap2010:WorkflowViewState.IdRef="Sequence_19">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click folder with &quot;today's date&quot;" sap:VirtualizedContainerService.HintSize="334,193" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click folder with &quot;today's date&quot;" sap:VirtualizedContainerService.HintSize="382,225" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://reedelsevier.sharepoint.com/sites/OG-ONECRUIR/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FOG%2DONECRUIR%2FShared%20Documents%2FPA%20HP&amp;viewid=0cafe987%2D9ce0%2D4c52%2Dbaeb%2D28681de003dc&amp;view=7&amp;q=10132024" CVScreenId="96e3c0a5-544e-4654-b18f-e9a93bc2eeb3" CvTextArea="334, 364, 52, 13" CvTextArgument="110132024" CvType="Text" DesignTimeRectangle="339, 364, 138, 16" DesignTimeScaleFactor="0.800000011920929" FriendlyName="'10132024'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='SPAN' innertext='{0}' visibleinnertext='{0}' /&gt;&quot;, DateToday)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='SPAN' innertext='{0}' visibleinnertext='{0}' type='' class='signalFieldValue_b9e74371' aaname='' check:text='{0}' /&gt;&quot;, DateToday)]" Guid="647129db-dcf5-454d-806f-999b61b48f8f" InformativeScreenshot="91f49f91538042a099f65298ba329543.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='{}' title='OG-ONECRUIR - PA HP - All Documents' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                       <uix:Target DesignTimeRectangle="297, 355, 32, 34" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-role='gridcell' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='gridcell' type='' tag='DIV' class='fileTypeIconColumn_7a55da97 ms-DetailsRow-cell cell-259 cellUnpadded-221' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAmCAYAAACsyDmTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADwSURBVFhH7dg9C4FhFMZxH8lKIgMLpUw2C0kWA58OUcpiYTAZvEVJjF6Gx+VWJKejk1PqTuepX6ceuvrPTwiePf4F7Xdb+MSCJBYksSCJBUksSPIfQcd+DudW+M2pm8RhPWb//w1VEI25u/SiuC7rwKYGrB1yg1mF3aJUQVg1nOb7XVSBeckpf7zcFqULmhZVuC1KFzQpqHBblC5olAfGDnefmN+5LUoXNMw42a8vt0XpggbpD1LMuxdui9IF9RIq3BalCgo6MaAdAVoOvU/kfdCJs1uUKuiXLEhiQRILkliQxIIk/gU9vqR583gWBNwA4UfXCpTzqxIAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
                                     </scg:List>
                                   </uix:TargetAnchorable.Anchors>
@@ -326,7 +326,7 @@
                                 </uix:VerifyExecutionOptions>
                               </uix:NClick.VerifyOptions>
                             </uix:NClick>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download'" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf3ed675-4977-4149-920c-2227338435cf" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://reedelsevier.sharepoint.com/sites/RollanLester/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FRollanLester%2FShared%20Documents%2FFLOBOT%2F&amp;view=7&amp;q=08242024" CvTextArea="935, 360, 88, 21" CvTextArgument="Download" CvType="Text" DesignTimeRectangle="471, 222, 47, 11" DesignTimeScaleFactor="0.75" ElementType="Text" FriendlyName="'Download'" FullSelectorArgument="&lt;webctrl id='id__505' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='id__505' tag='SPAN' type='' class='ms-Button-label label-245' aaname='Download' check:innerText='Download' /&gt;" Guid="2b997e15-68b0-4cd9-b3d0-8c9a32c887d4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFkAAAAXCAYAAABgWeOzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAITSURBVGhD7ZbhjcIwDIVvpLubq4wCYpOKSRBb8IMdQmI7je04pc3RcKA8qRK4Tvz8xS18ua7N1SE3UIfcQB1yA30Y5Is7/Hy73elG31vLri8hn/fu1yeZ1/FCSf9ZbwT5cKbvk25uHBD26xpYoreGTHp0/+X6BMhel6Of6GH0sy0Fcb82XXtfkqmw9+00+PjgxisFSLxO+oxNTDUyH2XID/1FkU9+2TyUF+jhSZAxh0OhYqphbCrP0wZi8zIucxHy4HYCjFXXqrHUX1DIlfDNIbiO3otfz3+nYiyrXwOZNos5aNaaCnqPs+YQloYyuMPRN8LjUCM1Fg/i8VOQQ17jz5bec2Yd8Xsy5LwpLoTAGtRPQfgezEI85cE61kQRVOZX+1npzxRBjVOrhkzKrlf5uqCc2YJekMugWk8BmEdzGFdNeeVPACmrr5pc6y+KehRX9FNaA3oSZHH6q5vgAPEzB4vmOHBUM8iUL6dbHfr2kPWU2ZtGWY/j9CqAhtK9KQ4e5JpqyCv92XVUz3MHR/f+BBlMWABUDKUPhESTAD92/B5BHyNsCgfVQ17jr+CXaqQ41sjyvPDQqiHTxqZZumeBmcvPzJTitFcl5GnfBf4wxl8FyZOASpxEnRCDv5kLIedX6R0URVPA11hQSHkzqNl4NeSgpf50XvBSmHDNCvaz60vIXZuoQ26gDrmBOuQG6pA3l3N3CH8+OB6MUXgAAAAASUVORK5CYII=" InformativeScreenshot="64ebd70d65b59cb09d21610d99e6028b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='{}' title='* - FLOBOT - All Documents' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
@@ -340,11 +340,17 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20" />
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
                         </If.Else>
                       </If>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Saving files to the 'Downloads' Folder&quot;]" />
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Saving files to the 'Downloads' Folder&quot;]" />
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_13">
                             <sap:WorkflowViewStateService.ViewState>
@@ -372,7 +378,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_7">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_21">
                             <sap:WorkflowViewStateService.ViewState>
@@ -406,7 +412,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_8">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_22">
                             <sap:WorkflowViewStateService.ViewState>
@@ -440,7 +446,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="CommentOut_9">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_23">
                             <sap:WorkflowViewStateService.ViewState>
@@ -485,12 +491,12 @@
           </ActivityAction>
         </ui:GetLastDownloadedFile.Body>
       </ui:GetLastDownloadedFile>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="602,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Downloads Folder: &quot; + In_DownloadsFolder  + DateToday + &quot;.zip&quot;]" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="602,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Destination Folder: &quot; + In_MasterFolder  + DateToday + &quot;.zip&quot;]" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="602,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Moving zipped files to the MasterFolder.&quot;]" />
-      <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[In_MasterFolder + DateToday + &quot;.zip&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="602,159" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[In_DownloadsFolder  + DateToday + &quot;.zip&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Downloads Folder: &quot; + In_DownloadsFolder  + DateToday + &quot;.zip&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Destination Folder: &quot; + In_MasterFolder  + DateToday + &quot;.zip&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Moving zipped files to the MasterFolder.&quot;]" />
+      <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[In_MasterFolder + DateToday + &quot;.zip&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="586,182" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[In_DownloadsFolder  + DateToday + &quot;.zip&quot;]" />
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Successfully moved zipped files to the MasterFolder.&quot;]" />
-    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="664,90" sap2010:WorkflowViewState.IdRef="Delay_3" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="620,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Successfully moved zipped files to the MasterFolder.&quot;]" />
+    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="620,113" sap2010:WorkflowViewState.IdRef="Delay_3" />
   </Sequence>
 </Activity>

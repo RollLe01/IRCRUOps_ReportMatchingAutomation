@@ -1,5 +1,6 @@
 {
   "name": "IRCRUOps_ReportMatchingAutomation",
+  "projectId": "dce564f0-c2da-4b0e-9cfc-9327f38f7fb5",
   "description": "Automated renaming of downloaded reports",
   "main": "Main.xaml",
   "dependencies": {
@@ -13,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.4.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -43,7 +44,7 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": true
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
